@@ -1,0 +1,18 @@
+.about_main
+{
+        height: 350px;
+    background-color: floralwhite;
+    padding:2%;
+    margin-bottom: 50px;
+}
+
+.about_title
+{
+    color:black;
+    font-size: 40px;
+}
+
+.about_para
+{
+    font-size: 20px;
+}

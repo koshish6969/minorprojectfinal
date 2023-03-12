@@ -1,0 +1,46 @@
+.tick_photo
+{
+    border-radius: 70%;
+    margin-top: 1%;
+}
+
+.sucess_header
+{
+    font-size: 40px;
+    display: block;
+  
+    margin-block-start: 1em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+
+}
+
+.success_message
+{
+    font-size: 20px;
+    color: grey;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0.5em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+.add_more_book_success
+{
+    color: white;
+    font-size: 25px;
+    border-radius: 30px;
+    border-width: 0px;
+    text-align: center;
+    padding: 10px 30px;
+    background-color: orange;
+    cursor: pointer;
+    margin-left: 1%;
+    margin-bottom: 20px;
+}

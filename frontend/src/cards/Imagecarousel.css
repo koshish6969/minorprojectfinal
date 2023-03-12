@@ -1,0 +1,39 @@
+
+.product-container {
+
+    background-color: white;
+ 
+
+}
+
+
+
+
+.filter-btn
+{
+  margin-top: 15px;
+  border:none;
+  background-color:rgb(235, 232, 232);
+
+  cursor:pointer;
+  width: 150px;
+ height:30px;
+ border-radius:20px;
+ font-size: 16px;
+}
+
+.filter-btn:hover{
+    background-color: white;
+    width: 153px;
+    height:33px;
+}
+
+.filter-btn-arrange
+{
+    display: flex;
+    flex-direction: column;
+   margin-left: 45px;
+    
+
+}
+

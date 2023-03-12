@@ -1,0 +1,100 @@
+.det_body
+{   height: 200px;
+
+
+    
+    display: grid;
+     grid-template-columns:40% 60%;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+ 
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+   
+}
+
+.det_img
+{
+
+    height:200px;
+    width: 170px;
+  
+}
+
+
+.det_main
+{
+ 
+    margin-bottom: 30px;
+    background-color:  rgb(255,165,0,0.4);
+  
+    margin-right: 10px;
+    margin-left:10px;
+    
+}
+
+
+.det_det
+{
+    display:flex;
+    flex-direction: column;
+  
+}
+
+
+.det_card_btn_main
+{   
+    margin-top: 210px;
+   
+}
+
+.det_card_btn
+{
+    font-family: "Poppins";
+    color: white;
+    border-radius: 30px;
+ 
+    background-color: orange;
+   
+    width: 150px;
+    height: 50px;
+    border-width: 0px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.det_card_btn:hover
+{
+    font-family: "Poppins";
+    color: white;
+    border-radius: 30px;
+ 
+    background-color:black;
+
+    width: 150px;
+    height: 50px;
+    border-width: 0px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.det_name
+{
+    
+    font-weight: normal;
+    font-size: 20px;
+    text-align: left;
+    margin-block-end: 0em;
+}
+
+
+.det_price
+{
+    text-align:left;
+}
+
+.det_sell
+{margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: left;
+    color: grey;
+}

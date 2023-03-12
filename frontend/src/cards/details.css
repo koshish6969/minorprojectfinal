@@ -1,0 +1,213 @@
+.selected-book
+{
+  font-family: 'Poppins';
+  display:grid;
+  grid-template-columns: 17% 53% 30%;
+  margin-top: 60px;
+
+}
+
+.details_img
+{
+  height: 290px;
+  width:200px;
+  margin-left: 50px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+ 
+}
+
+.det_pri
+{
+  font-weight:normal;
+  display: block;
+  font-size: 20px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+ 
+ 
+  
+}
+
+.book-title
+{
+  font-size: 35px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.book_info
+{ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ text-align: left;
+ margin-left: 20px;
+ border-radius: 20px;
+border: 0.1px solid  rgb(221, 221, 221);
+grid-template-columns: 50% 50%;
+
+}
+
+.rev_container
+{
+  background-color: rgb(255,165,0,0.4);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-left: 100px;
+  height:350px;
+  width: 300px;
+  position:relative;
+}
+.container
+{
+  background-color: rgb(255,165,0,0.4);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-left: 100px;
+  height:305px;
+  width: 300px;
+  position:relative;
+  border-radius: 15px;
+}
+
+.det_btn
+{
+  font-family: "Poppins";
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding:10px 40px;
+    background-color: orange;
+    border-width: 0px;
+    font-size: 25px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.det_btn:hover
+{
+  font-family: "Poppins";
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding:10px 40px;
+    background-color: black;
+    border-width: 0px;
+    font-size: 25px;
+    cursor: pointer;
+    
+
+}
+
+.author
+{
+  color: grey;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+.uploader
+{ margin-top:10px;
+  margin-left: 107%;
+  border:0.1px solid  rgb(221, 221, 221);
+  border-radius: 20px;
+  text-align: left;
+  width: 300px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  
+  margin-bottom: 15px;
+  
+}
+
+.deets
+{
+  margin-left:20px;
+  
+}
+
+.Name 
+{ 
+  margin-left: 20px;
+  margin-top:10px;
+  cursor: pointer;
+  color:darkorange;
+  font-weight: bold;
+ 
+}
+
+.Name:hover{
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.location{
+  font-size: 25px;
+  display: block;
+ margin-bottom: 5px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  
+}
+
+.Number
+{
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.reviewsss
+{
+  overflow-y:auto;
+  height:100px;
+  border-radius: 15px;
+}
+
+.rev_title
+{
+  display: block;
+  font-size: 1.5em;
+
+  margin-block-start: 0.1em;
+  margin-block-end: 0.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+
+.rev_details
+{
+  background-color: rgb(247, 240, 230);
+  border-radius: 15px;
+  width:80%;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-left:10%;
+}
+
+.rev_poster_details
+{
+  width:70%;
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 1em;
+  margin-inline-start: 13%;
+  margin-inline-end: 0px;
+  font-size: 13px;
+  color: grey;
+}
+
+
+.rev_input
+{
+
+  margin:0px;
+  margin-bottom: 10px;
+}

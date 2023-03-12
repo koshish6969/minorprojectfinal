@@ -1,0 +1,9 @@
+back end 
+npm init
+npm install
+node index.js ( to run the back end )
+
+front end
+npm init
+npm install 
+npm start ( to start back end )
