@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./AddBook.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import AddLocation from "../Googlemap/AddLocation";
 
 function AddBook() {
   window.scrollTo(0, 0);
@@ -85,6 +86,11 @@ function AddBook() {
   };
   const navigate = useNavigate();
 
+  const setChangeLocation = (place) => {
+    setLat(place.lat)
+    setLon(place.lon)
+  }
+
   return (
     <>
       <div className="box">
@@ -154,29 +160,7 @@ function AddBook() {
               />
               
             </div> */}
-            {
-              // If the location in the browser is available then remove the lat lon inputs
-              isLocation && <>
-                <div>
-                  <label>Latitude</label>
-                  <input
-                    type="text"
-                    name="lat"
-                    value={lat}
-                    onChange={(e) => setLat(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label>Longitude</label>
-                  <input
-                    type="text"
-                    name="lon"
-                    value={lat}
-                    onChange={(e) => setLon(e.target.value)}
-                  />
-                </div>
-              </>
-            }
+            <AddLocation setLocation={setChangeLocation}/>
           </div>
           <div className="Category">
             <label>
