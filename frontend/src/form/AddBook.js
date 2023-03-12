@@ -59,6 +59,7 @@ function AddBook() {
     formData.append("username", username);
     formData.append("lat", lat);
     formData.append("lon", lon);
+    formData.append("lon", lon);
 
     const data = {};
 
@@ -89,6 +90,7 @@ function AddBook() {
   const setChangeLocation = (place) => {
     setLat(place.lat)
     setLon(place.lon)
+    setLocation(place.place)
   }
 
   return (

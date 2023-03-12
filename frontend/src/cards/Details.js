@@ -138,6 +138,7 @@ const Details = () => {
                 <br />
 
                 <h1 className="det_pri">Rs. {bookdetails.prices}</h1>
+                <h1 className="det_pri">Place: {bookdetails.location}</h1>
                 <MapComponent lat={bookdetails.lat} lon={bookdetails.lon}/>
               </div>
             </>
