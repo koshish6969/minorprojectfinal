@@ -25,22 +25,22 @@ function AddBook() {
   const userId = localStorage.getItem("_id");
   const username = localStorage.getItem("username");
 
-  useEffect(() => {
+  // useEffect(() => {
     // get the browser location
-    if ("geolocation" in navigator) {
-      console.log("Available");
-      navigator.geolocation.getCurrentPosition(function(position) {
-        if(position && position.coords && position?.coords?.latitude) {
-          setIsLocation(false);
-        }
-        setLat(position.coords.latitude);
-        setLon(position.coords.longitude);
-      });
-    } else {
-      console.log("Not Available");
-      setIsLocation(true)
-    }
-  },[navigator])
+  //   if ("geolocation" in navigator) {
+  //     console.log("Available");
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       if(position && position.coords && position?.coords?.latitude) {
+  //         setIsLocation(false);
+  //       }
+  //       setLat(position.coords.latitude);
+  //       setLon(position.coords.longitude);
+  //     });
+  //   } else {
+  //     console.log("Not Available");
+  //     setIsLocation(true)
+  //   }
+  // },[navigator])
 
   const handleApi = async (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ function AddBook() {
     formData.append("username", username);
     formData.append("lat", lat);
     formData.append("lon", lon);
-    formData.append("lon", lon);
+
 
     const data = {};
 

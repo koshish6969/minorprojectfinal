@@ -224,7 +224,9 @@ app.post("/add-product", (req, resp) => {
       prices: fields.prices[0],
       userId: fields.userId[0],
       username: fields.username[0],
-      location: fields.location[0],
+      //new changes here
+      lat: fields.lat[0],
+      lon: fields.lon[0],
       image: imageURL,
     });
 

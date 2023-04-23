@@ -1,0 +1,8 @@
+.auto_complete
+{
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 10px;
+    margin-bottom: 2px;
+    box-shadow: 0 1px 16px 0 rgba(0,0,0,.09);
+}

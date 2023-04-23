@@ -1,8 +1,11 @@
-import React from "react";
-import GooglePlacesAutocomplete, {geocodeByAddress} from "react-google-places-autocomplete";
+import React, { useState } from "react";
+import GooglePlacesAutocomplete, {
+  geocodeByAddress,
+} from "react-google-places-autocomplete";
 // import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 import "react-google-places-autocomplete/dist/index.min.css";
 // import { GOOGLE_MAPS_APIKEY } from "@env";
+import "./autocomplete.css";
 export default function AddLocation(props) {
   // const handleAddress = ({ description }) => {
   //   console.log(description);
@@ -17,18 +20,27 @@ export default function AddLocation(props) {
   //     })
   //     .catch((error) => console.error(error));
   // };
-
+  const [value, setValue] = useState(null);
   const onChange = (place) => {
+    setValue(place);
     geocodeByAddress(place)
-      .then(results => {
-        console.log(results[0].geometry.bounds['Ja'].lo)
-        props.setLocation({name: place, lat:results[0].geometry.bounds['Ja'].lo, lon: results[0].geometry.bounds['Va'].lo})
+      .then((results) => {
+        console.log(results);
+        props.setLocation({
+          place: place,
+          lat: results[0].geometry.bounds["Va"].lo,
+          lon: results[0].geometry.bounds["Ja"].lo,
+        });
       })
-      .catch(error => console.error(error));
-  }
+      .catch((error) => console.error(error));
+  };
   return (
     <div>
       <GooglePlacesAutocomplete
+        className="auto_complete"
+        selectProps={{
+          value: value,
+        }}
         debounce={800}
         apiKey="AIzaSyB_9pxJVXOeEobT06qB8eDVWV1mkBZOw6g"
         renderSuggestions={(active, suggestions, onSelectSuggestion) => (

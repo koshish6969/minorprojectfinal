@@ -15,8 +15,8 @@ function Home() {
   window.scrollTo(0, 0);
   // This ref will be connected to the overlay div
   const overlayRef = useRef();
-  // const auth = localStorage.getItem("_id");
-  const auth = "1212"
+ const auth = localStorage.getItem("_id");
+
   // This function is called when the "Start Searching" button gets clicked
   const openSearch = () => {
     overlayRef.current.style.width = "100%";

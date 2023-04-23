@@ -3,7 +3,7 @@ import "../form//AddBook.css";
 import Footer from "../Footer";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import AddLocation from "../Googlemap/AddLocation";
 function UpdateBook() {
   window.scrollTo(0, 0);
   const [selectedFile, setSelectedFile] = useState("");
@@ -15,6 +15,8 @@ function UpdateBook() {
   const [prices, setPrices] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
   const params = useParams();
   const navigate = useNavigate();
 
@@ -34,6 +36,8 @@ function UpdateBook() {
     setPrices(result.prices);
     setCategory(result.category);
     setLocation(result.location);
+    setLat(result.lat);
+    setLon(result.lon);
     setSelectedFile(result.SelectedFile);
     setImage(result.imageURL);
   };
@@ -53,6 +57,8 @@ function UpdateBook() {
     formData.append("category", category);
     formData.append("prices", prices);
     formData.append("location", location);
+    formData.append("lon", lon);
+    formData.append("lat", lat);
     formData.append("userId", userId);
 
     const data = {};
@@ -73,6 +79,8 @@ function UpdateBook() {
         category,
         prices,
         location,
+        lat,
+        lon,
         Image,
       }),
       headers: {
@@ -101,6 +109,11 @@ function UpdateBook() {
     setSelectedFile(e.target.files[0]);
   };
 
+  const setChangeLocation = (place) => {
+    setLat(place.lat)
+    setLon(place.lon)
+    setLocation(place.place)
+  }
   return (
     <>
       <div className="box">
@@ -152,15 +165,7 @@ function UpdateBook() {
               onChange={(e) => setPrices(e.target.value)}
               pattern="^-?[0-9]\d*\.?\d*$"
             />
-            <div>
-              <label>Location</label>
-              <input
-                type="text"
-                name="location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
-            </div>
+            <AddLocation value={location} setLocation={setChangeLocation}/>
           </div>
           <div className="Category">
             <label>

@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";
-import MapComponent from '../MapComponent'
+import MapComponent from "../MapComponent";
 const Details = () => {
   window.scrollTo(0, 0);
   const location = useLocation();
@@ -21,6 +21,8 @@ const Details = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchUsers, setUserResults] = useState([]);
   const [searchSimilarBooks, setSimilarBooks] = useState([]);
+  const [lat, setLat] = useState(27);
+  const [lon, setLon] = useState(85.2812261);
 
   const navigate = useNavigate();
   const goToUserProfile = (e) => {
@@ -94,27 +96,6 @@ const Details = () => {
     }
   };
 
-  const mapping = "kathmandu engineering college";
-  // let source =
-  //   "https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=kathmandu%20engineering%20college%20Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
-  //    https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=kathmandu%20engineering%20college%20Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed
-  let mapping__array = mapping.split(" ");
-  // let breakpoint = /[q%]/;
-  let breakpoint = /\q=|20Kathmandu/;
-  console.log(mapping__array);
-  // let source__array = source.split(breakpoint);
-  // let again_array = source_array[1].split('%20Kathmandu');
-  // console.log(again_array);
-  // console.log(source__array);
-  let result = "";
-  for (let i = 0; i < mapping__array.length; i++) {
-    result = result.concat(mapping__array[i], "%20");
-  }
-  console.log(result);
-  // let final__location = `https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=${result}Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;&output=embed`
-  var final__location =
-    "https://maps.google.com/maps/embed?width=520&amp;height=400&amp;hl=en&amp;q=kathmandu%20engineering%20college%20Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
-  console.log(final__location);
   return (
     <div>
       <div className="selected-book">
@@ -125,7 +106,7 @@ const Details = () => {
         <div className="book_info">
           {searchResults.map((bookdetails, index) => (
             <>
-              {" "}
+              {console.log(bookdetails)}
               <div className="book-title">{bookdetails.bookname} </div>
               <p className="author">By {bookdetails.author}</p>
               <div className="deets">
@@ -138,8 +119,8 @@ const Details = () => {
                 <br />
 
                 <h1 className="det_pri">Rs. {bookdetails.prices}</h1>
-                <h1 className="det_pri">Place: {bookdetails.location}</h1>
-                <MapComponent lat={bookdetails.lat} lon={bookdetails.lon}/>
+            
+               
               </div>
             </>
           ))}
@@ -168,20 +149,16 @@ const Details = () => {
             placeholder="Add your review"
             onChange={updateReview}
           ></input>
-          
+
           {auth ? (
-            
             <button type="button" className="det_btn" onClick={sendReview}>
-            Add Review
-          </button>
-            
+              Add Review
+            </button>
           ) : (
             <Link to="/login">
               <button className="button_sell">Add Review</button>{" "}
             </Link>
           )}
-          
-        
         </div>
         <div className="uploader">
           {searchUsers.map((userdetails, index) => (
@@ -195,31 +172,17 @@ const Details = () => {
           ))}
         </div>
       </div>
-
       <hr />
       {searchResults.map((bookdetails, index) => (
-        <h1 className="location"> Location : {bookdetails.location}</h1>
-      ))}
-
-      <div>
-        <iframe
-          width="1000"
-          height="500"
-          frameborder="0"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          id="gmap_canvas"
-          // src={require(`https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=${result}Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`)}
-          // src={final__location}
-
-          // src={require(`${final__location}`)}
-          // src=require('https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=kathmandu%20engineering%20college%20Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed')
-          src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=kathmandu%20engineering%20college%20Kathmandu+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-        ></iframe>
-      </div>
-      <hr />
+      <> <h1>Location: {bookdetails.location}</h1>
+      <MapComponent
+      latitude={bookdetails.lat}
+      longitude={bookdetails.lon}
+    />
+    </> 
+    ))}
       <div className="line1"></div>
+      <hr />
       <br />
       <div className="Container2">
         <h2 className="det_pri">Other uploads </h2>
