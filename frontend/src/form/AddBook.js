@@ -16,17 +16,17 @@ function AddBook() {
   const [prices, setPrices] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
-  const [lat, setLat] = useState('');
-  const [lon, setLon] = useState('');
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
 
   // show the inputs for lat lon or not
-  const [isLocation, setIsLocation] = useState(true)
+  const [isLocation, setIsLocation] = useState(true);
 
   const userId = localStorage.getItem("_id");
   const username = localStorage.getItem("username");
 
   // useEffect(() => {
-    // get the browser location
+  // get the browser location
   //   if ("geolocation" in navigator) {
   //     console.log("Available");
   //     navigator.geolocation.getCurrentPosition(function(position) {
@@ -60,14 +60,13 @@ function AddBook() {
     formData.append("lat", lat);
     formData.append("lon", lon);
 
-
     const data = {};
 
     for (const [key, value] of formData.entries()) {
       data[key] = value;
     }
 
-    console.log(data);
+    console.log("koshish", data);
     console.log("-------------------------------");
 
     await axios
@@ -88,10 +87,11 @@ function AddBook() {
   const navigate = useNavigate();
 
   const setChangeLocation = (place) => {
-    setLat(place.lat)
-    setLon(place.lon)
-    setLocation(place.place)
-  }
+    setLat(place.lat);
+    setLon(place.lon);
+    setLocation(place.place);
+    console.log("place.lat wala ho", place);
+  };
 
   return (
     <>
@@ -159,10 +159,13 @@ function AddBook() {
                 name="location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
+
+
+
               />
               
             </div> */}
-            <AddLocation setLocation={setChangeLocation}/>
+            <AddLocation setLocation={setChangeLocation} />
           </div>
           <div className="Category">
             <label>

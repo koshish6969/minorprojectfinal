@@ -25,11 +25,14 @@ export default function AddLocation(props) {
     setValue(place);
     geocodeByAddress(place)
       .then((results) => {
+        console.log("asdasds");
         console.log(results);
+        console.log(results[0].geometry.bounds["Va"].lo);
+        console.log(results[0].geometry.bounds["Ha"].lo);
         props.setLocation({
           place: place,
           lat: results[0].geometry.bounds["Va"].lo,
-          lon: results[0].geometry.bounds["Ja"].lo,
+          lon: results[0].geometry.bounds["Ha"].lo,
         });
       })
       .catch((error) => console.error(error));
@@ -42,6 +45,7 @@ export default function AddLocation(props) {
           value: value,
         }}
         debounce={800}
+    
         apiKey="AIzaSyB_9pxJVXOeEobT06qB8eDVWV1mkBZOw6g"
         renderSuggestions={(active, suggestions, onSelectSuggestion) => (
           <div className="">
